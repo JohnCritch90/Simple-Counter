@@ -24,7 +24,7 @@ const SimpleCounter = (props) => {
     );
 };
 
-SimpleCounter.propType = {
+SimpleCounter.propTypes = {
     digitSix: propTypes.number,
     digitFive: propTypes.number,
     digitFour: propTypes.number,
@@ -35,12 +35,12 @@ SimpleCounter.propType = {
 
 let clock = 0;
 setInterval(function(){
-    const six = Math.floor(counter/100000);
-    const five = Math.floor(counter/10000);
-    const four = Math.floor(counter/1000);
-    const three = Math.floor(counter/100);
-    const two = Math.floor(counter/10);
-    const one = Math.floor(counter/1);
+    const six = Math.floor(clock/100000);
+    const five = Math.floor(clock/10000);
+    const four = Math.floor(clock/1000);
+    const three = Math.floor(clock/100);
+    const two = Math.floor(clock/10);
+    const one = Math.floor(clock/1);
     console.log(six, five, four, three, two, one);
     clock++;
 
@@ -48,4 +48,4 @@ setInterval(function(){
         <SimpleCounter digitOne={one} digitTwo={two} digitThree={three} 
         digitFour={four} digitFive={five} digitSix={six} />, document.querySelector("#app"));
 
-    },100000);
+    },1000);
